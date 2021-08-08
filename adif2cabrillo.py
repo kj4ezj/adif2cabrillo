@@ -39,8 +39,9 @@ for line in adifEntries:
         idx = line.find("FREQ:")
         numChar = int(line[idx+5])
         freq = line[idx+7:idx+7+numChar]
+        #freq = freq*1000
         ii = freq.find(".")
-        freq = freq[0:ii]+freq[ii+1:numChar]
+        freq = freq[0:ii]+freq[ii+1:ii+4] #+freq[ii]+freq[ii+4:numChar]
 
         idx = line.find("QSO_DATE:")
         date = line[idx+11:idx+11+4]+"-"+line[idx+11+4:idx+11+6]+"-"+\
