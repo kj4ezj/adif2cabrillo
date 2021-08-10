@@ -1,5 +1,4 @@
 # Convert adif file to cabrillo for NAQP
-version = 0.11
 myCall = "AA6XA"
 myName = "JEFF"
 myState = "CA"
@@ -13,6 +12,7 @@ fCab = open(cabFlnm, 'w')
 
 contest = input("Contest name: ")
 #write the fixed header
+version = 0.11
 fCab.write("START-OF-LOG: 3.0\n")
 fCab.write("CONTEST: "+contest+"\n")
 fCab.write("LOCATION: "+mySection+"\n")
