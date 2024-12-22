@@ -213,7 +213,7 @@ for line in adifEntries:
 
         idx = line.find("TIME_ON:")
         numChar = int(line[idx+8])
-        time = line[idx+10:idx+10+numChar]
+        time = line[idx+10:idx+14]
 
         idx = line.find("CALL:")
         numChar = int(line[idx+5])
