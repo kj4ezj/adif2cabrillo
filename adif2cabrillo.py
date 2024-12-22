@@ -59,6 +59,8 @@ for line in adifEntries:
         idx = line..find("MODE:")
         numChar = int(line[idx+5])
         mode = line[idx+7:idx+7+numChar]
+        if re.match(r"^(AM|FM|SSB)$", mode):
+            mode = "PH"
 
         idx = line.find("QSO_DATE:")
         date = line[idx+11:idx+11+4]+"-"+line[idx+11+4:idx+11+6]+"-"+line[idx+11+6:idx+11+8]
