@@ -1,10 +1,18 @@
 # Convert adif file to cabrillo for NAQP
+import re
+
+### FILL THIS STUFF IN FIRST ###
+myAddress = """Winchester Mystery House
+525 S Winchester Blvd
+San Jose, CA
+95128"""
 myCall = "AA6XA"
 myEmail = "someone@example.com"
 myGrid = "AB12ce"
 myName = "JEFF"
 myState = "CA"
 mySection = "SCV"
+### ^^^^^ ###
 
 adifFlnm = input('Enter Adif filename to read: ')
 cabFlnm = input('Enter Cabrillo filename to write: ')
@@ -32,6 +40,7 @@ fCab.write("CLAIMED-SCORE: \n")
 fCab.write("CREATED-BY: https://github.com/kj4ezj/adif2cabrillo v"+version+"\n")
 fCab.write("GRID-LOCATOR: "+myGrid+"\n")
 fCab.write("NAME: "+myName+"\n")
+fCab.write(re.sub(r'(?m)^', 'ADDRESS: ', myAddress)+"\n")
 fCab.write("EMAIL: "+myEmail+"\n")
 fCab.write("OPERATORS: "+myCall+"\n")
 fCab.write("SOAPBOX: \n")
