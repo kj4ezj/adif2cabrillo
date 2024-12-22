@@ -97,7 +97,7 @@ arrl_identifiers = {
     "Washington": "WA",
     "West Virginia": "WV",
     "Wisconsin": "WI",
-    "Wyoming": "WY"
+    "Wyoming": "WY",
     # Canadian provinces
     "Alberta": "AB",
     "British Columbia": "BC",
@@ -113,7 +113,7 @@ arrl_identifiers = {
     "Prince Edward": "PE",
     "Quebec": "QC",
     "Saskatchewan": "SK",
-    "Yukon": "YT"
+    "Yukon": "YT",
     # Mexican states
     "Aguascalientes": "AGS",
     "Baja California Sur": "BCS", # must be before BCN
