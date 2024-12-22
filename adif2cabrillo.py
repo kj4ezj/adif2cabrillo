@@ -76,15 +76,15 @@ for line in adifEntries:
         # cabrillo rx exchange
         idx = line.find("<RST_RCVD:")
         numChar = int(line[idx+10])
-        rxExch = line[idx+12:idx+12+numChar]
+        rxRST = line[idx+12:idx+12+numChar]
 
         # cabrillo tx exchange
         idx = line.find("<RST_SENT:")
         numChar = int(line[idx+10])
-        txExch = line[idx+12:idx+12+numChar]
+        txRST = line[idx+12:idx+12+numChar]
 
         #write line in cabrillo file
-        fCab.write("QSO: "+freq+" "+mode+" "+date+" "+time+" "+myCall+" "+txExch+" "+call+" "+rxExch+" \n")
+        fCab.write("QSO: "+freq+" "+mode+" "+date+" "+time+" "+myCall+" "+txRST+" "+call+" "+rxRST+" \n")
 
 #write the footer, close files
 fCab.write("END-OF-LOG:\n")
