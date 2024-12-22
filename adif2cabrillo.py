@@ -232,7 +232,7 @@ for line in adifEntries:
         txRST = line[idx+12:idx+12+numChar]
 
         #write line in cabrillo file
-        fCab.write("QSO: "+freq+" "+mode+" "+date+" "+time+" "+myCall+" "+txRST+" "+myState" "+call+" "+rxRST+" "+rxExchange+"\n")
+        fCab.write("QSO: "+freq+" "+mode+" "+date+" "+time+" "+myCall+" "+txRST+" "+myState+" "+call+" "+rxRST+" "+rxExchange+"\n")
 
 #write the footer, close files
 fCab.write("END-OF-LOG:\n")
