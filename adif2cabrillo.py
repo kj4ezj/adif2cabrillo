@@ -28,7 +28,6 @@ fCab.write("CLAIMED-SCORE: \n")
 fCab.write("CREATED-BY: AA6XA's adif2cabrillo v"+version+"\n")
 fCab.write("NAME: "+myName+"\n")
 fCab.write("EMAIL: \n")
-fCab.write("ADDRESS: \n")
 fCab.write("OPERATORS: "+myCall+"\n")
 fCab.write("SOAPBOX: \n")
 
