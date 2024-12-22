@@ -163,30 +163,25 @@ arrl_identifiers = {
 # ARRL location or serial number received
 def get_arrl_exchange(line):
     # look for QSO serial number in the COMMENT field, ignoring numbers like "10m contest"
-    comment_match = re.search(r'<COMMENT[^<]+', line)
-    if comment_match:
-        comment_content = re.search(r'>(.*?)<', comment_match.group(0))
-        if comment_content:
-            comment_text = comment_content.group(1)
-            number_match = re.search(r'\b([0-9]+)\b', comment_text)
-            if number_match:
-                return number_match.group(1)
+    comment_field = re.search(r'<COMMENT:[0-9]+>([^<]+)', line)
+    if comment_field:
+        comment = comment_field.group(1)
+        number_match = re.search(r'\b([0-9]+)\b', comment)
+        if number_match:
+            return number_match.group(1)
 
     # look for location in the QTH field
-    qth_match = re.search(r'<QTH[^<]+', line)
-    if qth_match:
-        qth_content = re.search(r'>(.*?)<', qth_match.group(0))
-        if qth_content:
-            qth_text = qth_content.group(1)
-            # look for two or three letter state (US, Mexico) or Canadian province identifiers
-            uppercase_match = re.search(r'\b[A-Z]{2,3}\b', qth_text)
-            if uppercase_match:
-                return uppercase_match.group(1)
-            else:
-                # look for full state/province names and match them to a list
-                for key, value in arrl_identifiers.items():
-                    if key in qth_text:
-                        return value
+    qth_field = re.search(r'<QTH:[0-9]+>([^<]+)', line)
+    if qth_field:
+        qth = qth_field.group(1)
+        # look for two or three letter state (US, Mexico) or Canadian province identifiers
+        uppercase_match = re.search(r'\b([A-Z]{2,3})\b', qth)
+        if uppercase_match:
+            return uppercase_match.group(1)
+        else: # look for full state/province names and match them to a list
+            for key, value in arrl_identifiers.items():
+                if key in qth:
+                    return value
 
     # return MISSING if nothing is found
     return "MISSING"
