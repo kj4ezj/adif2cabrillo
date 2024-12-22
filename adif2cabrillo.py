@@ -1,5 +1,6 @@
 # Convert adif file to cabrillo for NAQP
 myCall = "AA6XA"
+myEmail = "someone@example.com"
 myGrid = "AB12ce"
 myName = "JEFF"
 myState = "CA"
@@ -31,7 +32,7 @@ fCab.write("CLAIMED-SCORE: \n")
 fCab.write("CREATED-BY: https://github.com/kj4ezj/adif2cabrillo v"+version+"\n")
 fCab.write("GRID-LOCATOR: "+myGrid+"\n")
 fCab.write("NAME: "+myName+"\n")
-fCab.write("EMAIL: \n")
+fCab.write("EMAIL: "+myEmail+"\n")
 fCab.write("OPERATORS: "+myCall+"\n")
 fCab.write("SOAPBOX: \n")
 
