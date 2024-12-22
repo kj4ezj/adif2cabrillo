@@ -186,6 +186,12 @@ def get_arrl_exchange(line):
     # return MISSING if nothing is found
     return "MISSING"
 
+# given a string with freq in MHz, return a string with freq in kHz rounded to nearest kHz
+def get_kHz_from_MHz(frequency_str):
+        freq_MHz = float(frequency_str)
+        freq_kHz = int(round(freq_MHz * 1000))
+        return str(freq_kHz)
+
 #loop over lines in Adif file
 adifEntries = fAdif.readlines()
 for line in adifEntries:
@@ -193,9 +199,8 @@ for line in adifEntries:
     if line[1:5]=="CALL":
         idx = line.find("FREQ:")
         numChar = int(line[idx+5])
-        freq = line[idx+7:idx+7+numChar]
-        ii = freq.find(".")
-        freq = freq[0:ii]+freq[ii+1:ii+4]
+        freq_MHz = line[idx+7:idx+7+numChar]
+        freq = get_kHz_from_MHz(freq_MHz)
 
         idx = line.find("MODE:")
         numChar = int(line[idx+5])
