@@ -158,6 +158,37 @@ arrl_identifiers = {
     "Zacatecas": "ZAC"
 }
 
+# ARRL location or serial number received
+def get_arrl_exchange(line):
+    # look for QSO serial number in the COMMENT field, ignoring numbers like "10m contest"
+    comment_match = re.search(r'<COMMENT[^<]+', line)
+    if comment_match:
+        comment_content = re.search(r'>(.*?)<', comment_match.group(0))
+        if comment_content:
+            comment_text = comment_content.group(1)
+            number_match = re.search(r'\b([0-9]+)\b', comment_text)
+            if number_match:
+                return number_match.group(1)
+
+    # look for location in the QTH field
+    qth_match = re.search(r'<QTH[^<]+', line)
+    if qth_match:
+        qth_content = re.search(r'>(.*?)<', qth_match.group(0))
+        if qth_content:
+            qth_text = qth_content.group(1)
+            # look for two or three letter state (US, Mexico) or Canadian province identifiers
+            uppercase_match = re.search(r'\b[A-Z]{2,3}\b', qth_text)
+            if uppercase_match:
+                return uppercase_match.group(1)
+            else
+                # look for full state/province names and match them to a list
+                for key, value in arrl_identifiers.items():
+                    if key in qth_text:
+                        return value
+
+    # return MISSING if nothing is found
+    return "MISSING"
+
 #loop over lines in Adif file
 adifEntries = fAdif.readlines()
 for line in adifEntries:
@@ -191,13 +222,15 @@ for line in adifEntries:
         numChar = int(line[idx+10])
         rxRST = line[idx+12:idx+12+numChar]
 
+        rxExchange = get_arrl_exchange(line)
+
         # cabrillo tx exchange
         idx = line.find("<RST_SENT:")
         numChar = int(line[idx+10])
         txRST = line[idx+12:idx+12+numChar]
 
         #write line in cabrillo file
-        fCab.write("QSO: "+freq+" "+mode+" "+date+" "+time+" "+myCall+" "+txRST+" "+call+" "+rxRST+" \n")
+        fCab.write("QSO: "+freq+" "+mode+" "+date+" "+time+" "+myCall+" "+txRST+" "+myState" "+call+" "+rxRST+" "rxExchange"\n")
 
 #write the footer, close files
 fCab.write("END-OF-LOG:\n")
