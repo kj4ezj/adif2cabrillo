@@ -1,5 +1,6 @@
 # Convert adif file to cabrillo for NAQP
 myCall = "AA6XA"
+myGrid = "AB12ce"
 myName = "JEFF"
 myState = "CA"
 mySection = "SCV"
@@ -28,6 +29,7 @@ fCab.write("CATEGORY-OVERLAY: LIMITED-ANTENNA\n")
 fCab.write("CERTIFICATE: YES\n")
 fCab.write("CLAIMED-SCORE: \n")
 fCab.write("CREATED-BY: https://github.com/kj4ezj/adif2cabrillo v"+version+"\n")
+fCab.write("GRID-LOCATOR: "+myGrid+"\n")
 fCab.write("NAME: "+myName+"\n")
 fCab.write("EMAIL: \n")
 fCab.write("OPERATORS: "+myCall+"\n")
