@@ -2,6 +2,7 @@
 import re
 
 ### FILL THIS STUFF IN FIRST ###
+contest = "ARRL-10"
 myAddress = """Winchester Mystery House
 525 S Winchester Blvd
 San Jose, CA
@@ -20,7 +21,6 @@ cabFlnm = input('Enter Cabrillo filename to write: ')
 fAdif = open(adifFlnm, 'r')
 fCab = open(cabFlnm, 'w')
 
-contest = "ARRL-10"
 #write the fixed header
 version = 0.11
 fCab.write("START-OF-LOG: 3.0\n")
