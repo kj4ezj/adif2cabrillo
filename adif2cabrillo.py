@@ -59,14 +59,14 @@ for line in adifEntries:
         call = line[idx+7:idx+7+numChar]
 
         # cabrillo rx exchange
-        idx = line.find("SRX_STRING:")
-        numChar = int(line[idx+11])
-        rxExch = line[idx+13:idx+13+numChar]
+        idx = line.find("<RST_RCVD:")
+        numChar = int(line[idx+10])
+        rxExch = line[idx+12:idx+12+numChar]
 
         # cabrillo tx exchange
-        idx = line.find("STX_STRING:")
-        numChar = int(line[idx+11])
-        txExch = line[idx+13:idx+13+numChar]
+        idx = line.find("<RST_SENT:")
+        numChar = int(line[idx+10])
+        txExch = line[idx+12:idx+12+numChar]
 
         #write line in cabrillo file
         fCab.write("QSO: "+freq+"  "+mode+" "+date+" "+time+" "+myCall+" "+txExch+" "+call+" "+rxExch+" \n")
