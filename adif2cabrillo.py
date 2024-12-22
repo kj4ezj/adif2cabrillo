@@ -24,7 +24,6 @@ fAdif = open(adifFlnm, 'r')
 fCab = open(cabFlnm, 'w')
 
 #write the fixed header
-version = 0.11
 fCab.write("START-OF-LOG: 3.0\n")
 fCab.write("CONTEST: "+contest+"\n")
 fCab.write("LOCATION: "+mySection+"\n")
@@ -39,7 +38,7 @@ fCab.write("CATEGORY-STATION: FIXED\n")
 fCab.write("CATEGORY-OVERLAY: LIMITED-ANTENNA\n")
 fCab.write("CERTIFICATE: YES\n")
 fCab.write("CLAIMED-SCORE: \n")
-fCab.write("CREATED-BY: https://github.com/kj4ezj/adif2cabrillo v"+version+"\n")
+fCab.write("CREATED-BY: https://github.com/kj4ezj/adif2cabrillo/tree/v0.1.0\n")
 fCab.write("GRID-LOCATOR: "+myGrid+"\n")
 fCab.write("NAME: "+myName+"\n")
 fCab.write(re.sub(r'(?m)^', 'ADDRESS: ', myAddress)+"\n")
