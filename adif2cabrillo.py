@@ -72,7 +72,7 @@ for line in adifEntries:
         txExch = line[idx+12:idx+12+numChar]
 
         #write line in cabrillo file
-        fCab.write("QSO: "+freq+"  "+mode+" "+date+" "+time+" "+myCall+" "+txExch+" "+call+" "+rxExch+" \n")
+        fCab.write("QSO: "+freq+" "+mode+" "+date+" "+time+" "+myCall+" "+txExch+" "+call+" "+rxExch+" \n")
 
 #write the footer, close files
 fCab.write("END-OF-LOG:\n")
