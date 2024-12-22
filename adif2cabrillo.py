@@ -202,7 +202,7 @@ for line in adifEntries:
         ii = freq.find(".")
         freq = freq[0:ii]+freq[ii+1:ii+4]
 
-        idx = line..find("MODE:")
+        idx = line.find("MODE:")
         numChar = int(line[idx+5])
         mode = line[idx+7:idx+7+numChar]
         if re.match(r"^(AM|FM|SSB)$", mode):
