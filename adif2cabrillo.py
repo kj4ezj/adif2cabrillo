@@ -48,8 +48,7 @@ for line in adifEntries:
         mode = line[idx+7:idx+7+numChar]
 
         idx = line.find("QSO_DATE:")
-        date = line[idx+11:idx+11+4]+"-"+line[idx+11+4:idx+11+6]+"-"+\
-            line[idx+11+6:idx+11+8]
+        date = line[idx+11:idx+11+4]+"-"+line[idx+11+4:idx+11+6]+"-"+line[idx+11+6:idx+11+8]
 
         idx = line.find("TIME_ON:")
         numChar = int(line[idx+8])
@@ -70,8 +69,7 @@ for line in adifEntries:
         txExch = line[idx+13:idx+13+numChar]
 
         #write line in cabrillo file
-        fCab.write("QSO: "+freq+"  "+mode+" "+date+" "+time+" "+myCall+\
-            " "+txExch+" "+call+" "+rxExch+" \n")
+        fCab.write("QSO: "+freq+"  "+mode+" "+date+" "+time+" "+myCall+" "+txExch+" "+call+" "+rxExch+" \n")
 
 #write the footer, close files
 fCab.write("END-OF-LOG:\n")
