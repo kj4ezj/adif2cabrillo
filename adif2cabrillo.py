@@ -1,3 +1,5 @@
+#!/bin/env python3
+
 # Convert adif file to cabrillo for NAQP
 import re
 
