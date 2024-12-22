@@ -182,7 +182,7 @@ def get_arrl_exchange(line):
             uppercase_match = re.search(r'\b[A-Z]{2,3}\b', qth_text)
             if uppercase_match:
                 return uppercase_match.group(1)
-            else
+            else:
                 # look for full state/province names and match them to a list
                 for key, value in arrl_identifiers.items():
                     if key in qth_text:
