@@ -10,7 +10,7 @@ cabFlnm = input('Enter Cabrillo filename to write: ')
 fAdif = open(adifFlnm, 'r')
 fCab = open(cabFlnm, 'w')
 
-contest = input("Contest name: ")
+contest = "ARRL-10"
 #write the fixed header
 version = 0.11
 fCab.write("START-OF-LOG: 3.0\n")
@@ -20,7 +20,7 @@ fCab.write("CALLSIGN: "+myCall+"\n")
 fCab.write("CATEGORY-OPERATOR: SINGLE-OP\n")
 fCab.write("CATEGORY-TRANSMITTER: ONE\n")
 fCab.write("CATEGORY-ASSISTED: NON-ASSISTED\n")
-fCab.write("CATEGORY-BAND: ALL\n")
+fCab.write("CATEGORY-BAND: 10M\n")
 fCab.write("CATEGORY-POWER: LOW\n")
 fCab.write("CATEGORY-MODE: CW\n")
 fCab.write("CATEGORY-STATION: FIXED\n")
