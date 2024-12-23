@@ -1,7 +1,8 @@
 # adif2cabrillo
-> Forked from [kabelj/Adif2Cabrillo](https://github.com/kabelj/Adif2Cabrillo), thank you Jeff ([AA6XA](https://www.qrz.com/db/AA6XA)) for your work creating the original! I run this on Linux Mint but it should "just work" on any computer with Python 3.
+> Forked from [kabelj/Adif2Cabrillo](https://github.com/kabelj/Adif2Cabrillo).
+> Thank you Jeff ([AA6XA](https://www.qrz.com/db/AA6XA)) for your work creating the original, and for giving back to the FLOSS and ham radio community!
 
-Use this Python 3 script to convert [ADIF files](https://www.adif.org) (\*.adi, \*.adif) to [Cabrillo format](https://wwrof.org/cabrillo) (\*.log, \*.cbr) to submit for contests.
+Use this Python 3 script to convert [ADIF files](https://www.adif.org) (\*.adi, \*.adif) to [Cabrillo format](https://wwrof.org/cabrillo) (\*.log, \*.cbr) to submit for contests. I run this on Linux Mint but it should "just work" on any computer with Python 3.
 
 <!-- contents box begin -->
 <table>
