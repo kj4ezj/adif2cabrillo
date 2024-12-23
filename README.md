@@ -1,5 +1,5 @@
 # adif2cabrillo
-> Forked from [kabelj/Adif2Cabrillo](https://github.com/kabelj/Adif2Cabrillo).
+> Forked from [kabelj/Adif2Cabrillo](https://github.com/kabelj/Adif2Cabrillo).  
 > Thank you Jeff ([AA6XA](https://www.qrz.com/db/AA6XA)) for your work creating the original, and for giving back to the FLOSS and ham radio community!
 
 Use this Python 3 script to convert [ADIF files](https://www.adif.org) (\*.adi, \*.adif) to [Cabrillo format](https://wwrof.org/cabrillo) (\*.log, \*.cbr) to submit for contests. I run this on Linux Mint but it should "just work" on any computer with Python 3.
@@ -31,7 +31,7 @@ This fork is designed _specifically for [klog](https://github.com/ea4k/klog)_ be
 ## Usage
 Clone this repo.
 ```bash
-git clone git@github.com:ea4k/klog.git
+git@github.com:kj4ezj/adif2cabrillo.git
 ```
 Navigate into the repo, open the script with your text editor of choice...
 ```bash
