@@ -1,5 +1,5 @@
 # adif2cabrillo
-> Forked from [kabelj/Adif2Cabrillo](https://github.com/kabelj/Adif2Cabrillo), thank you Jeff ([AA6XA](https://www.qrz.com/db/AA6XA)) for your work creating the original!
+> Forked from [kabelj/Adif2Cabrillo](https://github.com/kabelj/Adif2Cabrillo), thank you Jeff ([AA6XA](https://www.qrz.com/db/AA6XA)) for your work creating the original! I run this on Linux Mint but it should "just work" on any computer with Python 3.
 
 Use this Python 3 script to convert [ADIF files](https://www.adif.org) (\*.adi, \*.adif) to [Cabrillo format](https://wwrof.org/cabrillo) (\*.log, \*.cbr) to submit for contests.
 
@@ -25,7 +25,7 @@ Use this Python 3 script to convert [ADIF files](https://www.adif.org) (\*.adi, 
 </table>
 <!-- contents box end -->
 
-This fork is designed _specifically for [klog](https://github.com/ea4k/klog)_ because the upstream `adif2cabrillo` program was incompatible with `klog`. I run these on Linux Mint but it should "just work" on any computer with Python 3.
+This fork is designed _specifically for [klog](https://github.com/ea4k/klog)_ because the upstream `adif2cabrillo` program was incompatible with `klog`. It parses the `QTH` field for locations, and looks for serial numbers in the `COMMENTS` field while ignoring numbers like "10m" in "ARRL 10m contest" if you put stuff like that in your comments.
 
 ## Usage
 Clone this repo.
