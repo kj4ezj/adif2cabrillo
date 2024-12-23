@@ -61,3 +61,7 @@ Here are some links I found helpful.
     - [Header](https://wwrof.org/cabrillo/cabrillo-v3-header)
     - [QSO Data](https://wwrof.org/cabrillo/cabrillo-qso-data)
 - [klog](https://github.com/ea4k/klog)
+
+***
+> **_Legal Notice_**  
+> This repo contains assets created in collaboration with a large language model, machine learning algorithm, or weak artificial intelligence (AI). This notice is required in some countries.
