@@ -17,7 +17,7 @@ Use this Python 3 script to convert [ADIF files](https://www.adif.org) (\*.adi, 
 <!-- contents markdown begin -->
 
 1. [Usage](#usage)
-1, [Example](#example)
+1. [Example](#example)
 1. [See Also](#see-also)
 
 <!-- contents markdown end -->
