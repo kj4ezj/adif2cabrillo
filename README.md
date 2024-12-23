@@ -1,27 +1,62 @@
-# Adif2Cabrillo
-Convert Adif file to Cabrillo after contests
+# adif2cabrillo
+Use this Python 3 script to convert [ADIF files](https://www.adif.org) (\*.adi, \*.adif) to [Cabrillo format](https://wwrof.org/cabrillo) (\*.log, \*.cbr) to submit for contests.
 
-This script was written using Python 3, and tested on the Linux computers I 
-have. In theory it will run on any device that has Python installed, so go 
-wild.
+> Forked from [kabelj/Adif2Cabrillo](https://github.com/kabelj/Adif2Cabrillo), thank you Jeff ([AA6XA](https://www.qrz.com/db/AA6XA)) for your work creating the original!
 
-Before running the script, edit the first few lines to your name, callsign,
-state, and section.
-Run the script. It will prompt you for the ADIF file name, then the file name 
-to write 
-as Cabrillo format. Finally it will prompt for the name of the contest. This
-should be whatever the CONTEST field of the header should be.
-The script makes some assumptions to fill out the header fields, but these are
-easy to change if its wrong once the file has been generated. You will need to 
-edit the file anyway if you want to put in a claimed score or your email, etc. 
-This can be done with your favorite text editor.
+<!-- contents box begin -->
+<table>
+<tr/>
+<tr>
+<td>
+<p/>
+<div align="center">
+<b>Contents</b>
+</div>
+<p/>
+<!-- contents markdown begin -->
 
-The script assumes your contest logger has written the transmitted and 
-received exchanges to the STX_STRING and SRX_STRING fields of the Adif file. 
-This appears to be the adif standard for where this information should go. It 
-also assumes the frequency is written in the adif in MHz. It's pretty simple, 
-so if you need to change it to match your logging program, it shouldn't be too
-hard.
+1. [Usage](#usage)
+1. [See Also](#see-also)
 
-Have fun, and let me know if you find any really horrible bugs!
-Jeff, aa6xa
+<!-- contents markdown end -->
+<p/>
+</td>
+</tr>
+</table>
+<!-- contents box end -->
+
+This fork is designed _specifically for [klog](https://github.com/ea4k/klog)_ because the upstream `adif2cabrillo` program was incompatible with `klog`. I run these on Linux Mint but it should "just work" on any computer with Python 3.
+
+## Usage
+Clone this repo.
+```bash
+git clone git@github.com:ea4k/klog.git
+```
+Navigate into the repo, open the script with your text editor of choice...
+```bash
+vim adif2cabrillo.py
+```
+...and edit the stuff at the top of the file. You will need to edit all of the `my*` variables, as well as the header fields (e.g. `CATEGORY-OPERATOR`). Once you have all that filled in, save the file and close your editor.
+
+Finally, run the program.
+```bash
+./adif2cabrillo.py
+```
+It will prompt you for the ADIF file name, then the file name to write in Cabrillo format.
+
+## See Also
+Here are some links I found helpful.
+- [adif.org](https://www.adif.org) - ADIF specification
+- [arrl.org](https://www.arrl.org)
+    - [10m Contest](https://www.arrl.org/10-meter)
+    - [Cabrillo Tutorials](https://www.arrl.org/cabrillo-format-tutorial)
+    - [Contest Log Submission](https://contest-log-submission.arrl.org)
+    - [Multipliers](https://contests.arrl.org/contestmultipliers.php)
+        - [Canada](https://contests.arrl.org/contestmultipliers.php?a=ve)
+        - [Mexico](https://contests.arrl.org/contestmultipliers.php?a=xe)
+        - [United States](https://contests.arrl.org/contestmultipliers.php?a=usa)
+        - [US Sections](https://contests.arrl.org/contestmultipliers.php?a=wve)
+- [Cabrillo Specification](https://wwrof.org/cabrillo)
+    - [Header](https://wwrof.org/cabrillo/cabrillo-v3-header)
+    - [QSO Data](https://wwrof.org/cabrillo/cabrillo-qso-data)
+- [klog](https://github.com/ea4k/klog)
